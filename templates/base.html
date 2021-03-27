@@ -1,0 +1,111 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <title>{% block title %}{% endblock title %}</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link  rel="stylesheet" href="{% static 'core/css/bootstrap.css' %}">
+    <link  rel="stylesheet" href="{% static 'core/css/all.fontawesome.min.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ {% comment %} for web {% endcomment %}
+      
+    
+  </head>
+  <body class="bg-success">
+  <nav class="navbar navbar-expand-lg  bg-primary navbar-dark">
+    <a class="navbar-brand" href="/"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+      
+      <li class="nav-item mt-2 ml-5 active">
+          <a class="nav-link" href="/"><span class="fas fa-university fa-lg "></span><b><i>Mudra-Kosh Bank</i></b></a>
+        </li>
+        <li class="nav-item mt-2 ml-5 {% block homeactive %}{% endblock homeactive %}">
+          <a class="nav-link" href="/"><span class="fas fa-home fa-lg "></span><b>Home</b></a>
+        </li>
+        
+        <li class="nav-item mt-2 ml-4 {% block accountsactive %}{% endblock accountsactive %}">
+          <a class="nav-link" href="accounts"><span class="fa fa-user fa-lg"></span><b>Accounts</b></a>
+        </li> 
+        <li class="nav-item mt-2 ml-4 {% block aboutactive %}{% endblock aboutactive %}">
+          <a class="nav-link" href="about"><span class="fa fa-info fa-lg"></span><b>About</b></a>
+        </li> 
+        <li class="nav-item mt-2 ml-4 {% block contactactive %}{% endblock contactactive %} ">
+          <a class="nav-link" href="contact"><span class="fa fa-address-card fa-lg"></span><b>Contact</b></a>
+        </li> 
+      </ul>
+    </div>
+  </nav>
+  {% block body %}
+  
+  
+  {% endblock body %}
+  <footer class="bg-dark text-light position-relative fixed-bottom">
+  <div class=" mt-5">
+     <div class="row">             
+          <div class="col-4 offset-1 col-sm-2 mt-5 ">
+              <h5>Links</h5>
+              <ul class="list-unstyled mt-2">
+                 
+                 <li><a href="/"><span class="fas fa-home fa-lg "></span>Home</a></li>
+                 <li><a  href="accounts"><span class="fas fa-user fa-lg "></span> Accounts</a></li>
+                 <li><a  href="about"><span class="fa fa-info fa-lg"></span>About</a></li>
+                 <li><a  href="contact"><span class="fas fa-address-card fa-lg "></span>Contact</a></li>
+              </ul>
+          </div>
+          <div class="col-7 col-sm-5 mt-5">
+                <h5>Address</h5>
+                <address class="mt-2">
+		          Kendua Bazar<br>
+	              Kusunda 828116<br>
+	              Dhanbad,Jharkhand<br>
+		          Tel.: +918507044426<br>
+	              Email: <a href="mailto:hg9040626@gmail.com">hg9040626@gmail.com</a>
+	           </address>
+            </div>
+
+                <div class="col-12 col-sm-4 align-self-center">
+                    <div class="text-center">
+                        <a href="http://google.com/+"><i class="fab fa-google" aria-hidden="true"></i></a>
+                        <a href="http://www.facebook.com/profile.php?id="><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                        <a href="http://www.linkedin.com/in/"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                        <a href="http://twitter.com/"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="http://youtube.com/"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                        <a href="mailto:"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+     </div>
+
+           <div class="row justify-content-center">             
+                <div class="col-auto">
+                    <p class="text-primary"><b><i>&copy;Harsh Kumar Gupta 2021</i></b></p>
+                </div>
+           </div>
+  </div>
+  
+  </footer>
+
+
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'core/js/jquery.js' %}"></script>
+    <script src="{% static 'core/js/propper.js' %}"></script>
+    <script src="{% static 'core/js/jqbootstrap.js' %}"></script>
+    <script src="{% static 'core/js/all.fontawesome.min.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ 
+     
+ 
+  </body>
+</html>

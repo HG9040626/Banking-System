@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}About{% endblock title %}
+{% block aboutactive %}active{% endblock aboutactive %}
+{% block body %}
+<h1 class="text-center"><b><i>Our Developer</i></b></h1>
+ 
+<div class="card mt-5" style="width: 30rem;">
+  <img class="card-img-top" src="{% static 'harsh.jpg' %}" alt="Card image cap">
+  <div class="card-body bg-dark">
+    <h1 class="ml-0 text-center text-primary">Harsh Kumar Gupta</h1>
+    <p class="card-text text-primary">A Learner||Web Developer</p>
+  </div>
+</div>
+{% endblock body %}

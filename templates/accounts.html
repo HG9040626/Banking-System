@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block title %}Accounts{% endblock title %}
+{% block accountsactive %}active{% endblock accountsactive %} 
+{% block body %}
+
+<h1 class="text-center">Our Customers</h1>
+{% if success %}
+<h2>Sucess</h2>
+{% endif %}
+<div class="container border-1px ">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Account Number</th>
+                <th>IFSC Code</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Amount</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+          {% for i in alltasks %}
+            <tr>
+            
+                <td scope="row">{{forloop.counter}}</td>
+                <td>{{i.acn}}</td>
+                <td>{{i.ifsc}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.phone}}</td>
+                <td>{{i.amt}}</td>
+                
+                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Transfer</button></td>
+             
+            </tr>
+          {% endfor %}
+            
+        </tbody>
+    </table>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body">
+                    <form action="accounts" method="post">
+                       {% csrf_token %}
+                            
+                       <div class="form-group">
+                           <label for="fromac">From</label><input type="text" class="form-control" id="sender" name="fromac" placeholder="Enter Account Number.....">
+                       </div>
+                       <div class="form-group">
+                          <label for="toac">To</label> <input type="text" class="form-control" id="toac" name="toac" placeholder="Enter Account Number.....">
+                      </div>
+                      <div class="form-group">
+                        <label for="ifsc_c">IFSC Code</label> <input type="text" class="form-control" id="ifsc_c" name="ifsc_c" placeholder="Enter IFSC Code.....">
+                      </div>
+                       <div class="form-group">
+                        <label for="comment"> Comment(Optional)</label> <input type="text" class="form-control" id="comment" name="comment" placeholder="Enter Comment.....">
+                      </div>
+                      <div class="form-group">
+                        <label for="amount">Amount</label> <input type="text" class="form-control" id="amount" name="amount" placeholder="Enter Amount.....">
+                      </div>
+
+                     <button type="submit" onclick="fun()" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+                   
+            </div>
+      </div>
+     
+    </div>
+</div>
+{% endblock body %}
+ 
